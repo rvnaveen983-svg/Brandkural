@@ -1,6 +1,6 @@
 "use client";
 
-import { TrendingUp, Users, Target } from "lucide-react";
+import { TrendingUp, Users, Target, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 const stats = [
@@ -9,78 +9,122 @@ const stats = [
   { icon: Target, value: "98%", label: "Client Retention" },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 45 },
+  show: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay, ease: "easeOut" },
+  }),
+};
+
 const AboutSection = () => (
   <section
     id="about"
-    className="py-24 relative bg-[#0a0f1e] overflow-hidden"
-    style={{ perspective: "1000px" }}
+    className="relative py-24 bg-white overflow-hidden"
+    style={{ perspective: "1200px" }}
   >
-    {/* Background glow */}
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-teal-900/10 opacity-50 pointer-events-none" />
+    {/* White Premium Background */}
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.14),transparent_35%)]" />
+
+    {/* Animated Blobs */}
+    <motion.div
+      className="absolute -top-28 -left-28 w-80 h-80 rounded-full bg-blue-400/20 blur-3xl"
+      animate={{ x: [0, 50, 0], y: [0, 40, 0], scale: [1, 1.15, 1] }}
+      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+    />
+
+    <motion.div
+      className="absolute -bottom-32 -right-28 w-96 h-96 rounded-full bg-cyan-400/20 blur-3xl"
+      animate={{ x: [0, -50, 0], y: [0, -40, 0], scale: [1, 1.2, 1] }}
+      transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+    />
+
+    {/* Soft Grid */}
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e40af0d_1px,transparent_1px),linear-gradient(to_bottom,#1e40af0d_1px,transparent_1px)] bg-[size:60px_60px]" />
 
     <div className="container mx-auto px-4 relative z-10">
-
       {/* Heading */}
       <motion.div
-        initial={{ opacity: 0, y: 40, rotateX: -8 }}
-        whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7 }}
+        custom={0}
         className="max-w-3xl mx-auto text-center mb-16"
       >
-        <span className="text-blue-400 text-sm font-semibold tracking-widest uppercase">
+        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-semibold mb-5 shadow-sm">
+          <Sparkles size={16} />
           About Us
-        </span>
-        <h2 className="text-white text-3xl md:text-4xl font-bold mt-3 mb-6 leading-tight">
+        </div>
+
+        <h2 className="text-gray-950 text-3xl md:text-5xl font-extrabold mt-3 mb-6 leading-tight">
           A Results-Driven{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent">
             Digital Marketing
           </span>{" "}
           Agency
         </h2>
-        <p className="text-gray-400 text-lg leading-relaxed">
+
+        <p className="text-gray-600 text-lg leading-relaxed">
           We help businesses generate high-quality leads, increase brand
           visibility, and boost revenue through data-driven strategies. Our team
-          combines creativity with analytics to deliver measurable growth for
-          every client we partner with.
+          combines creativity with analytics to deliver measurable growth.
         </p>
       </motion.div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
         {stats.map((s, i) => (
           <motion.div
             key={s.label}
-            initial={{ opacity: 0, y: 60, rotateY: -15, rotateX: 10 }}
-            whileInView={{ opacity: 1, y: 0, rotateY: 0, rotateX: 0 }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: i * 0.15 }}
+            custom={i * 0.15}
             whileHover={{
-              y: -12,
-              rotateX: 5,
-              rotateY: 5,
-              boxShadow: "0 25px 50px -12px rgba(59, 130, 246, 0.3)",
+              y: -14,
+              rotateX: 6,
+              rotateY: -6,
+              scale: 1.03,
             }}
+            transition={{ type: "spring", stiffness: 180, damping: 14 }}
             style={{ transformStyle: "preserve-3d" }}
-            className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-8 text-center cursor-default"
+            className="group relative bg-white border border-gray-100 rounded-3xl p-8 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)] overflow-hidden"
           >
+            {/* Hover Glow */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-blue-600/10 via-transparent to-cyan-400/10" />
+
+            {/* Top Shine */}
+            <div className="absolute -top-20 left-0 w-full h-32 bg-gradient-to-b from-blue-100/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
             {/* Icon */}
             <motion.div
-              className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 mb-4"
-              whileHover={{ rotateY: 180 }}
-              transition={{ duration: 0.6 }}
-              style={{ transformStyle: "preserve-3d" }}
+              className="relative mx-auto flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 mb-5 shadow-lg shadow-blue-500/25"
+              whileHover={{ rotate: 360, scale: 1.08 }}
+              transition={{ duration: 0.7 }}
             >
-              <s.icon className="text-white" size={24} />
+              <s.icon className="text-white" size={26} />
             </motion.div>
 
             {/* Value */}
-            <p className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+            <motion.p
+              className="relative text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent"
+              initial={{ scale: 0.8 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: 0.3 + i * 0.15, duration: 0.4 }}
+            >
               {s.value}
-            </p>
+            </motion.p>
 
             {/* Label */}
-            <p className="text-gray-400 text-sm mt-1">{s.label}</p>
+            <p className="relative text-gray-500 text-sm mt-2 font-medium">
+              {s.label}
+            </p>
+
+            {/* Bottom Line */}
+            <div className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full bg-gradient-to-r from-blue-600 to-cyan-400 transition-all duration-500" />
           </motion.div>
         ))}
       </div>
