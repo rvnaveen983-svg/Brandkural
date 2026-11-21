@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Manrope:wght@500;600;800&display=swap");
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
-  --foreground: #000000;
+  --foreground: #080b12;
 }
 
 @theme inline {
@@ -12,59 +13,27 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Black & White theme: blue/cyan accents and cool grays are remapped to pure neutrals */
+/* Design tokens from the Figma "Digital Marketing Agency" design */
 @theme {
-  --color-blue-50: #fafafa;
-  --color-blue-100: #f5f5f5;
-  --color-blue-200: #e5e5e5;
-  --color-blue-300: #d4d4d4;
-  --color-blue-400: #a3a3a3;
-  --color-blue-500: #404040;
-  --color-blue-600: #171717;
-  --color-blue-700: #000000;
-  --color-blue-800: #000000;
-  --color-blue-900: #000000;
-  --color-blue-950: #000000;
+  --font-heading: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --color-cyan-50: #fafafa;
-  --color-cyan-100: #f5f5f5;
-  --color-cyan-200: #e5e5e5;
-  --color-cyan-300: #d4d4d4;
-  --color-cyan-400: #a3a3a3;
-  --color-cyan-500: #525252;
-  --color-cyan-600: #262626;
-  --color-cyan-700: #171717;
-  --color-cyan-800: #0a0a0a;
-  --color-cyan-900: #000000;
-  --color-cyan-950: #000000;
+  --color-ink: #080b12;
+  --color-paper: #f7f8fa;
+  --color-navy: #06162d;
+  --color-navy-2: #071a35;
+  --color-brand: #3b82f6;
+  --color-brand-deep: #145bdb;
+  --color-brand-soft: #73a5ff;
+}
 
-  --color-gray-50: #fafafa;
-  --color-gray-100: #f5f5f5;
-  --color-gray-200: #e5e5e5;
-  --color-gray-300: #d4d4d4;
-  --color-gray-400: #a3a3a3;
-  --color-gray-500: #737373;
-  --color-gray-600: #525252;
-  --color-gray-700: #404040;
-  --color-gray-800: #262626;
-  --color-gray-900: #171717;
-  --color-gray-950: #0a0a0a;
-
-  --color-slate-50: #fafafa;
-  --color-slate-100: #f5f5f5;
-  --color-slate-200: #e5e5e5;
-  --color-slate-300: #d4d4d4;
-  --color-slate-400: #a3a3a3;
-  --color-slate-500: #737373;
-  --color-slate-600: #525252;
-  --color-slate-700: #404040;
-  --color-slate-800: #262626;
-  --color-slate-900: #171717;
-  --color-slate-950: #000000;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
