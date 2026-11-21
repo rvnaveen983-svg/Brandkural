@@ -8,11 +8,11 @@ const Footer = () => {
   const brandText = "BRAND KURAL";
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-white">
+    <footer className="relative overflow-hidden bg-gradient-to-br from-black via-neutral-950 to-black text-white">
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-32 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px]" />
+        <div className="absolute -top-32 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-[120px]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0d_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0d_1px,transparent_1px)] bg-[size:80px_80px] opacity-30" />
       </div>
 
@@ -23,7 +23,7 @@ const Footer = () => {
             {brandText.split("").map((letter, index) => (
               <span
                 key={index}
-                className={`inline-block text-white transition-all duration-300 ease-out hover:text-[#061a4d] hover:-translate-y-2 hover:scale-110 hover:[text-shadow:0_0_25px_rgba(255,255,255,0.45)] ${
+                className={`inline-block text-white transition-all duration-300 ease-out hover:text-gray-400 hover:-translate-y-2 hover:scale-110 hover:[text-shadow:0_0_25px_rgba(255,255,255,0.45)] ${
                   letter === " " ? "w-6 md:w-10" : ""
                 }`}
               >
