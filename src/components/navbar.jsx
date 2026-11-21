@@ -29,10 +29,10 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, ease: "easeOut" }}
-        className="relative max-w-7xl mx-auto rounded-2xl border border-white/40 bg-white/75 backdrop-blur-2xl shadow-[0_20px_60px_rgba(15,23,42,0.12)]"
+        className="relative max-w-7xl mx-auto rounded-2xl border border-white/50 bg-white/25 backdrop-blur-2xl backdrop-saturate-150 shadow-[0_8px_40px_rgba(0,60,120,0.18)]"
       >
-        {/* Soft glow line */}
-        <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
+        {/* Glass highlight line */}
+        <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent" />
 
         <div className="px-5 md:px-8 flex items-center justify-between h-[76px] gap-8">
           {/* Logo */}
@@ -42,7 +42,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.98 }}
             className="flex items-center gap-3 shrink-0 no-underline"
           >
-            <div className="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shrink-0 shadow-lg shadow-blue-500/25 overflow-hidden">
+            <div className="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shrink-0 shadow-lg shadow-black/20 overflow-hidden">
               <img
                 src="/Brandkural-logo.png"
                 alt="BrandKural"
@@ -67,10 +67,10 @@ const Navbar = () => {
             </div>
 
             <div className="flex flex-col leading-none">
-              <span className="text-[16px] md:text-[17px] font-extrabold tracking-[0.08em] text-blue-700 uppercase">
+              <span className="text-[16px] md:text-[17px] font-extrabold tracking-[0.08em] text-black uppercase">
                 BrandKural
               </span>
-              <span className="text-[10px] font-semibold text-gray-400 tracking-[0.08em] uppercase mt-1">
+              <span className="text-[10px] font-semibold text-gray-700 tracking-[0.08em] uppercase mt-1">
                 Digital Marketing
               </span>
             </div>
@@ -86,14 +86,14 @@ const Navbar = () => {
                   className={[
                     "relative block px-4 py-2.5 text-[14px] font-semibold rounded-xl transition-all duration-300 no-underline",
                     active === href
-                      ? "text-blue-700"
-                      : "text-gray-600 hover:text-blue-700 hover:bg-blue-50/80",
+                      ? "text-black"
+                      : "text-gray-800 hover:text-black hover:bg-white/40",
                   ].join(" ")}
                 >
                   {active === href && (
                     <motion.span
                       layoutId="activeNav"
-                      className="absolute inset-0 rounded-xl bg-blue-50 border border-blue-100"
+                      className="absolute inset-0 rounded-xl bg-white/50 border border-white/70 shadow-sm"
                       transition={{
                         type: "spring",
                         stiffness: 350,
@@ -107,7 +107,7 @@ const Navbar = () => {
                   {active === href && (
                     <motion.span
                       layoutId="activeDot"
-                      className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-blue-600"
+                      className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-black"
                     />
                   )}
                 </a>
@@ -121,7 +121,7 @@ const Navbar = () => {
               href="#login"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.97 }}
-              className="px-5 py-2.5 text-[13px] font-semibold text-gray-700 border border-gray-200 rounded-xl no-underline transition-all bg-white/60 hover:border-blue-200 hover:text-blue-700 hover:bg-blue-50"
+              className="px-5 py-2.5 text-[13px] font-semibold text-gray-900 border border-white/60 rounded-xl no-underline transition-all bg-white/30 backdrop-blur-md hover:border-white hover:text-black hover:bg-white/60"
             >
               Log in
             </motion.a>
@@ -130,7 +130,7 @@ const Navbar = () => {
               href="#consultation"
               whileHover={{ y: -2, scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="group relative overflow-hidden px-5 py-2.5 text-[13px] font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl no-underline shadow-lg shadow-blue-500/25"
+              className="group relative overflow-hidden px-5 py-2.5 text-[13px] font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl no-underline shadow-lg shadow-black/20"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Free consultation
@@ -147,7 +147,7 @@ const Navbar = () => {
           {/* Mobile Button */}
           <motion.button
             whileTap={{ scale: 0.92 }}
-            className="md:hidden p-2.5 text-gray-700 bg-white/70 border border-gray-200 rounded-xl shadow-sm hover:text-blue-700 hover:bg-blue-50 transition-colors focus:outline-none ml-auto"
+            className="md:hidden p-2.5 text-gray-900 bg-white/40 backdrop-blur-md border border-white/60 rounded-xl shadow-sm hover:text-black hover:bg-white/70 transition-colors focus:outline-none ml-auto"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -185,7 +185,7 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0, height: "auto" }}
               exit={{ opacity: 0, y: -12, height: 0 }}
               transition={{ duration: 0.28, ease: "easeOut" }}
-              className="md:hidden overflow-hidden border-t border-white/50 bg-white/80 backdrop-blur-2xl rounded-b-2xl"
+              className="md:hidden overflow-hidden border-t border-white/50 bg-white/40 backdrop-blur-2xl rounded-b-2xl"
             >
               <div className="px-5 py-5">
                 <ul className="flex flex-col gap-2 list-none mb-5">
@@ -205,8 +205,8 @@ const Navbar = () => {
                         className={[
                           "block px-4 py-3 text-sm font-semibold rounded-xl no-underline transition-all",
                           active === href
-                            ? "text-blue-700 bg-blue-50 border border-blue-100"
-                            : "text-gray-650 hover:text-blue-700 hover:bg-blue-50",
+                            ? "text-black bg-white/60 border border-white/70"
+                            : "text-gray-800 hover:text-black hover:bg-white/50",
                         ].join(" ")}
                       >
                         {label}
@@ -219,7 +219,7 @@ const Navbar = () => {
                   <a
                     href="#login"
                     onClick={() => setMenuOpen(false)}
-                    className="block text-center py-3 text-sm font-semibold text-gray-700 border border-gray-200 rounded-xl no-underline bg-white/70 hover:border-blue-200 hover:text-blue-700"
+                    className="block text-center py-3 text-sm font-semibold text-gray-900 border border-white/60 rounded-xl no-underline bg-white/40 hover:bg-white/70 hover:text-black"
                   >
                     Log in
                   </a>
@@ -227,7 +227,7 @@ const Navbar = () => {
                   <a
                     href="#consultation"
                     onClick={() => setMenuOpen(false)}
-                    className="block text-center py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl no-underline shadow-lg shadow-blue-500/25"
+                    className="block text-center py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl no-underline shadow-lg shadow-black/20"
                   >
                     Free consultation
                   </a>
