@@ -2,154 +2,310 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  ArrowDownRight,
-  MessageCircle,
-  Target,
-  TrendingUp,
-} from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, delay, ease: "easeOut" },
-  }),
+const serif = "'Playfair Display', Georgia, serif";
+const sans = "'Inter', sans-serif";
+
+// Background video (hosted remotely). To self-host: save it as /public/hero.mp4 and use "/hero.mp4"
+const VIDEO_SRC =
+  "https://pub-1e5b4001b36b47e28e6a2fb775966a79.r2.dev/templates/glacier/hero.mp4";
+
+const label = {
+  fontSize: "10.5px",
+  fontWeight: 500,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+  color: "rgba(255,255,255,0.6)",
+  fontFamily: sans,
+  textDecoration: "none",
 };
-
-const Chip = ({ icon: Icon, text, className }) => (
-  <div
-    className={`absolute flex items-center gap-[10px] rounded-[4px] border border-white/[0.14] bg-[rgba(7,26,53,0.66)] px-4 py-[14px] text-[11.2px] tracking-[0.06em] text-[#d9e7ff] shadow-[0_20px_50px_rgba(0,0,0,0.25)] backdrop-blur-[15px] ${className}`}
-  >
-    <Icon size={16} className="text-[#4f91ff]" />
-    {text}
-  </div>
-);
 
 const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden font-body"
       style={{
-        background:
-          "radial-gradient(circle 1474px at 74% 48%, #123569 0%, #0a2348 24%, #071a35 49%, #06162d 75%)",
+        position: "relative",
+        width: "100%",
+        height: "100svh",
+        minHeight: "640px",
+        overflow: "hidden",
+        background: "linear-gradient(180deg, #06162d 0%, #071a35 100%)",
       }}
     >
-      {/* Blue glow */}
-      <div className="absolute right-[2%] top-[18%] h-[420px] w-[420px] rounded-full bg-[rgba(31,105,255,0.14)] blur-[70px] md:h-[834px] md:w-[834px]" />
+      {/* Background video */}
+      <video
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+        src={VIDEO_SRC}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
 
-      {/* 3D sphere visual */}
+      {/* Overlays */}
+      <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.20)" }} />
       <div
-        className="pointer-events-none absolute bottom-[-60px] right-[-40px] hidden h-[650px] w-[650px] origin-bottom-right scale-[0.7] lg:block xl:scale-[0.85] 2xl:bottom-[-110px] 2xl:right-[2%] 2xl:scale-100"
-        style={{ perspective: "1200px" }}
-      >
-        <div
-          className="absolute left-[65px] top-[65px] h-[520px] w-[520px] rounded-full border border-[rgba(102,157,255,0.24)] shadow-[0_0_70px_rgba(36,112,255,0.18)]"
-          style={{ transform: "rotateX(68deg) rotateZ(-12deg)" }}
-        />
-        <div
-          className="absolute left-[13px] top-[13px] h-[624px] w-[624px] rounded-full border border-[rgba(71,131,239,0.17)] shadow-[0_0_70px_rgba(36,112,255,0.18)]"
-          style={{ transform: "rotateY(70deg) rotateZ(20deg)" }}
-        />
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.26) 0%, transparent 22%, transparent 60%, rgba(0,0,0,0.38) 100%)",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(to right, rgba(0,0,0,0.15) 0%, transparent 18%, transparent 82%, rgba(0,0,0,0.15) 100%)",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          top: "-14%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "1000px",
+          height: "720px",
+          background:
+            "radial-gradient(ellipse at 50% 30%, rgba(59,130,246,0.08) 0%, transparent 68%)",
+          pointerEvents: "none",
+        }}
+      />
 
+      {/* Centered lockup */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 10,
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          padding: "0 24px",
+        }}
+      >
+        {/* Brand */}
         <motion.div
-          animate={{ y: [0, -14, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute left-[175px] top-[169px] h-[312px] w-[312px] overflow-hidden rounded-full shadow-[0_0_100px_rgba(48,119,255,0.48)]"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
           style={{
-            background:
-              "radial-gradient(circle 313px at 32% 26%, #9dc9ff 0%, #6ba7ff 4.5%, #5296ff 6.75%, #3985ff 9%, #2470df 20%, #0e4ebf 31%, #0c409b 41.25%, #0a3277 51.5%, #082453 61.75%, #06162f 72%)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "10px",
+            marginBottom: "26px",
           }}
         >
-          <div className="absolute left-[-26px] top-[-27px] flex h-[178px] w-[223px] items-center justify-center">
-            <div className="-rotate-[28deg]">
-              <div className="h-[94px] w-[203px] rounded-[69px] border border-white/[0.35] blur-[2px]" />
-            </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <span
+              style={{
+                display: "block",
+                width: "18px",
+                height: "18px",
+                borderRadius: "9px",
+                border: "3.5px solid #3b82f6",
+                transform: "rotate(-35deg)",
+              }}
+            />
+            <span
+              style={{
+                fontSize: "15px",
+                fontWeight: 500,
+                letterSpacing: "0.28em",
+                textTransform: "uppercase",
+                color: "#fff",
+                fontFamily: sans,
+                paddingLeft: "0.28em",
+              }}
+            >
+              BrandKural
+            </span>
           </div>
-          <div className="absolute inset-0 rounded-full shadow-[inset_-35px_-35px_60px_#020711]" />
+          <span
+            style={{
+              fontSize: "10px",
+              fontWeight: 500,
+              letterSpacing: "0.34em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.65)",
+              fontFamily: sans,
+              paddingLeft: "0.34em",
+            }}
+          >
+            Digital Marketing
+          </span>
         </motion.div>
 
-        <Chip icon={TrendingUp} text="+320% Leads" className="left-[468px] top-[108px]" />
-        <Chip icon={Target} text="4.8x ROI" className="left-[33px] top-[487px]" />
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.85, delay: 0.24, ease: "easeOut" }}
+          style={{
+            margin: 0,
+            fontFamily: serif,
+            textTransform: "uppercase",
+            color: "#fff",
+            textShadow: "0 2px 40px rgba(0,0,0,0.4)",
+          }}
+        >
+          <span
+            style={{
+              display: "block",
+              fontWeight: 400,
+              fontSize: "clamp(3.3rem, 8.6vw, 6.4rem)",
+              lineHeight: 1,
+              letterSpacing: "0.02em",
+            }}
+          >
+            Scale Your
+          </span>
+          <span
+            style={{
+              display: "block",
+              fontWeight: 700,
+              fontSize: "clamp(3rem, 8.2vw, 6.2rem)",
+              lineHeight: 0.98,
+              letterSpacing: "0.01em",
+            }}
+          >
+            Business
+          </span>
+        </motion.h1>
+
+        {/* Subtext */}
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.42, ease: "easeOut" }}
+          style={{
+            margin: "24px 0 0",
+            maxWidth: "520px",
+            fontFamily: serif,
+            fontStyle: "italic",
+            fontWeight: 400,
+            fontSize: "18px",
+            lineHeight: 1.5,
+            color: "rgba(255,255,255,0.85)",
+            textShadow: "0 1px 20px rgba(0,0,0,0.45)",
+          }}
+        >
+          From strategy to execution, we help brands grow, generate quality
+          leads and dominate online with powerful digital marketing.
+        </motion.p>
+
+        {/* Oval button — true ellipse via border-radius: 50% */}
+        <motion.a
+          href="#contact"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.58, ease: "easeOut" }}
+          whileHover={{ backgroundColor: "rgba(255,255,255,0.12)" }}
+          whileTap={{ scale: 0.97 }}
+          style={{
+            marginTop: "38px",
+            padding: "20px 52px",
+            borderRadius: "50%",
+            border: "1px solid rgba(255,255,255,0.6)",
+            color: "#fff",
+            textDecoration: "none",
+            fontSize: "12px",
+            fontWeight: 500,
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            fontFamily: sans,
+            whiteSpace: "nowrap",
+            backgroundColor: "rgba(255,255,255,0)",
+          }}
+        >
+          Get Free Consultation
+        </motion.a>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 px-6 md:px-[5vw]">
-        <div className="mx-auto flex min-h-screen max-w-[1669px] flex-col justify-center pb-28 pt-36">
-          {/* Eyebrow */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={0}
-            className="flex items-center gap-3"
+      {/* Footer bar */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+        className="px-6 md:px-10"
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 10,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          paddingBottom: "26px",
+        }}
+      >
+        {/* Left: contact icons */}
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <a
+            href="https://wa.me/916382700550"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp"
+            style={{ display: "flex", color: "rgba(255,255,255,0.7)" }}
           >
-            <span className="block h-[7px] w-[7px] rounded-full bg-[#4f91ff] shadow-[0_0_0_6px_rgba(59,130,246,0.13),0_0_20px_#3b82f6]" />
-            <span className="text-[10.9px] uppercase tracking-[0.15em] text-[#98a7bd]">
-              Results-driven digital marketing
-            </span>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={0.12}
-            className="mt-9 max-w-[1050px] font-heading text-[clamp(2.5rem,5.4vw,6.25rem)] font-medium leading-[0.93] tracking-[-0.055em] text-white"
+            <MessageCircle size={16} />
+          </a>
+          <a
+            href="mailto:rvnaveen983@gmail.com"
+            aria-label="Send an email"
+            style={{ display: "flex", color: "rgba(255,255,255,0.7)" }}
           >
-            We scale your business with{" "}
-            <span className="text-brand">powerful digital marketing.</span>
-          </motion.h1>
-
-          {/* Paragraph + buttons */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={0.28}
-            className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:gap-[6vw]"
-          >
-            <p className="max-w-[430px] text-base leading-[1.65] text-[#aeb9c9]">
-              From strategy to execution, we help brands grow, generate quality
-              leads, increase conversions and dominate online with
-              performance-focused marketing.
-            </p>
-
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#contact"
-                className="group inline-flex min-h-[54px] items-center justify-center gap-3 rounded-[3px] bg-brand-deep px-[23px] text-[13.6px] font-semibold text-white no-underline shadow-[0_12px_16px_rgba(20,91,219,0.25)] transition-colors duration-200 hover:bg-[#1a6bf0]"
-              >
-                Get free consultation
-                <ArrowRight
-                  size={18}
-                  className="transition-transform duration-200 group-hover:translate-x-1"
-                />
-              </a>
-
-              <a
-                href="https://wa.me/916382700550"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-[54px] items-center justify-center gap-3 rounded-[3px] border border-white/[0.24] bg-white/[0.04] px-[23px] text-[13.6px] font-semibold text-white no-underline backdrop-blur-[12px] transition-colors duration-200 hover:bg-white/[0.1]"
-              >
-                <MessageCircle size={16} />
-                Chat on WhatsApp
-              </a>
-            </div>
-          </motion.div>
+            <Mail size={16} />
+          </a>
         </div>
-      </div>
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-10 left-6 z-10 flex items-center gap-[11px] text-[9.3px] uppercase tracking-[0.17em] text-[#8190a7] md:left-[5vw]">
-        Scroll to explore
-        <ArrowDownRight size={18} />
-      </div>
+        {/* Center */}
+        <div
+          className="absolute left-1/2 hidden -translate-x-1/2 gap-[5px] md:flex"
+          style={label}
+        >
+          <span style={{ color: "rgba(255,255,255,0.9)", fontWeight: 600 }}>
+            Scroll
+          </span>
+          <span>To Navigate</span>
+        </div>
+
+        {/* Right */}
+        <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
+          <a href="#contact" style={label}>
+            Free Consultation
+          </a>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ opacity: 0.7 }}
+          >
+            <path
+              d="M5 15V9M10 19V5M15 16V8M20 13v-2"
+              stroke="#fff"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+      </motion.div>
     </section>
   );
 };
