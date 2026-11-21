@@ -8,36 +8,36 @@ const services = [
     icon: Share2,
     title: "Social Media Marketing",
     desc: "Build a loyal community and drive engagement across all social platforms with data-backed content strategies.",
-    gradient: "from-pink-500 to-rose-500",
-    glow: "group-hover:shadow-pink-500/25",
+    gradient: "from-white to-gray-400",
+    glow: "group-hover:shadow-white/20",
   },
   {
     icon: Target,
     title: "Meta & Google Ads",
     desc: "Maximize your ROI with precision-targeted ad campaigns that reach the right audience at the right time.",
-    gradient: "from-orange-500 to-amber-500",
-    glow: "group-hover:shadow-orange-500/25",
+    gradient: "from-gray-100 to-gray-500",
+    glow: "group-hover:shadow-white/20",
   },
   {
     icon: Search,
     title: "SEO Optimization",
     desc: "Dominate search rankings and drive organic traffic with our proven SEO methodologies and keyword strategies.",
-    gradient: "from-green-500 to-emerald-500",
-    glow: "group-hover:shadow-green-500/25",
+    gradient: "from-white to-gray-400",
+    glow: "group-hover:shadow-white/20",
   },
   {
     icon: Globe,
     title: "Website Development",
     desc: "High-performance, conversion-optimized websites designed to turn visitors into paying customers.",
-    gradient: "from-blue-500 to-cyan-500",
-    glow: "group-hover:shadow-blue-500/25",
+    gradient: "from-gray-100 to-gray-500",
+    glow: "group-hover:shadow-white/20",
   },
   {
     icon: Palette,
     title: "Branding & Creative Design",
     desc: "Memorable brand identities and stunning visuals that set you apart from the competition.",
-    gradient: "from-violet-500 to-purple-500",
-    glow: "group-hover:shadow-violet-500/25",
+    gradient: "from-white to-gray-400",
+    glow: "group-hover:shadow-white/20",
   },
 ];
 
@@ -52,7 +52,7 @@ const floatingDots = [
 const ServicesSection = () => (
   <section
     id="services"
-    className="relative py-24 bg-[#030712] overflow-hidden"
+    className="relative py-24 bg-black overflow-hidden"
     style={{ perspective: "1400px" }}
   >
     {/* 3D Animated Background */}
@@ -73,7 +73,7 @@ const ServicesSection = () => (
 
       {/* Big moving glow */}
       <motion.div
-        className="absolute top-10 left-1/4 w-[420px] h-[420px] bg-blue-600/20 rounded-full blur-[130px]"
+        className="absolute top-10 left-1/4 w-[420px] h-[420px] bg-white/10 rounded-full blur-[130px]"
         animate={{
           x: [0, 120, 0],
           y: [0, 80, 0],
@@ -87,7 +87,7 @@ const ServicesSection = () => (
       />
 
       <motion.div
-        className="absolute bottom-0 right-1/4 w-[420px] h-[420px] bg-purple-600/20 rounded-full blur-[130px]"
+        className="absolute bottom-0 right-1/4 w-[420px] h-[420px] bg-white/10 rounded-full blur-[130px]"
         animate={{
           x: [0, -100, 0],
           y: [0, -80, 0],
@@ -117,7 +117,7 @@ const ServicesSection = () => (
       />
 
       <motion.div
-        className="absolute bottom-[20%] left-[8%] w-20 h-20 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 backdrop-blur-md"
+        className="absolute bottom-[20%] left-[8%] w-20 h-20 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md"
         animate={{
           rotateX: [360, 180, 0],
           rotateZ: [0, 180, 360],
@@ -133,7 +133,7 @@ const ServicesSection = () => (
 
       {/* Orbit ring */}
       <motion.div
-        className="absolute top-[28%] left-[7%] w-36 h-36 rounded-full border border-blue-400/20"
+        className="absolute top-[28%] left-[7%] w-36 h-36 rounded-full border border-white/20"
         animate={{ rotate: 360 }}
         transition={{
           duration: 14,
@@ -141,14 +141,14 @@ const ServicesSection = () => (
           ease: "linear",
         }}
       >
-        <div className="absolute top-2 left-1/2 w-3 h-3 rounded-full bg-blue-400 shadow-[0_0_25px_rgba(96,165,250,0.9)]" />
+        <div className="absolute top-2 left-1/2 w-3 h-3 rounded-full bg-white shadow-[0_0_25px_rgba(255,255,255,0.8)]" />
       </motion.div>
 
       {/* Floating dots */}
       {floatingDots.map((pos, i) => (
         <motion.span
           key={i}
-          className={`absolute ${pos} w-2 h-2 rounded-full bg-blue-400/70 shadow-[0_0_20px_rgba(96,165,250,0.9)]`}
+          className={`absolute ${pos} w-2 h-2 rounded-full bg-white/70 shadow-[0_0_20px_rgba(255,255,255,0.8)]`}
           animate={{
             y: [0, -22, 0],
             opacity: [0.3, 1, 0.3],
@@ -172,13 +172,13 @@ const ServicesSection = () => (
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="text-center mb-16"
       >
-        <span className="inline-flex items-center px-5 py-2 rounded-full bg-white/5 border border-white/10 text-blue-300 text-sm font-semibold tracking-widest uppercase backdrop-blur-md">
+        <span className="inline-flex items-center px-5 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-semibold tracking-widest uppercase backdrop-blur-md">
           Our Services
         </span>
 
         <h2 className="text-white font-extrabold text-3xl md:text-5xl mt-5 leading-tight">
           Everything You Need to{" "}
-          <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-violet-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
             Grow Online
           </span>
         </h2>
@@ -218,11 +218,11 @@ const ServicesSection = () => (
           >
             {/* Glow Border */}
             <div
-              className={`absolute -inset-[1px] rounded-3xl bg-gradient-to-br ${s.gradient} opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500`}
+              className={`absolute -inset-[1px] rounded-3xl bg-gradient-to-br ${s.gradient} opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500`}
             />
 
             {/* Card Body */}
-            <div className="relative h-full rounded-3xl bg-gray-950/80 border border-white/10 backdrop-blur-xl p-8 overflow-hidden">
+            <div className="relative h-full rounded-3xl bg-neutral-950/90 border border-white/10 backdrop-blur-xl p-8 overflow-hidden">
               {/* Shine effect */}
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
@@ -241,7 +241,7 @@ const ServicesSection = () => (
                 transition={{ duration: 0.65 }}
                 style={{ transform: "translateZ(45px)" }}
               >
-                <s.icon className="text-white" size={24} />
+                <s.icon className="text-black" size={24} />
               </motion.div>
 
               {/* Text */}
