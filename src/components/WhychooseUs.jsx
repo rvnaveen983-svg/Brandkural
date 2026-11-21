@@ -8,25 +8,25 @@ const reasons = [
     icon: BarChart3,
     title: "ROI-Focused Strategies",
     desc: "Every campaign is designed to deliver measurable returns on your investment.",
-    gradient: "from-blue-600 to-cyan-500",
+    gradient: "from-black to-gray-700",
   },
   {
     icon: Eye,
     title: "Transparent Reporting",
     desc: "Real-time dashboards and regular reports so you always know where your money goes.",
-    gradient: "from-violet-600 to-purple-500",
+    gradient: "from-gray-900 to-gray-600",
   },
   {
     icon: HeadphonesIcon,
     title: "Dedicated Support",
     desc: "A personal account manager and responsive team available when you need us.",
-    gradient: "from-emerald-600 to-teal-500",
+    gradient: "from-gray-800 to-gray-500",
   },
   {
     icon: Activity,
     title: "Performance Tracking",
     desc: "Advanced analytics and KPI tracking to continuously optimize your campaigns.",
-    gradient: "from-orange-500 to-rose-500",
+    gradient: "from-gray-700 to-black",
   },
 ];
 
@@ -39,11 +39,11 @@ const WhyChooseUs = () => (
     {/* 3D Animated White Background */}
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       {/* Soft gradient background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.14),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.12),transparent_34%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,0,0,0.06),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(0,0,0,0.05),transparent_34%)]" />
 
       {/* Moving grid */}
       <motion.div
-        className="absolute inset-0 opacity-[0.45] bg-[linear-gradient(to_right,#2563eb12_1px,transparent_1px),linear-gradient(to_bottom,#2563eb12_1px,transparent_1px)] bg-[size:75px_75px]"
+        className="absolute inset-0 opacity-[0.45] bg-[linear-gradient(to_right,#00000012_1px,transparent_1px),linear-gradient(to_bottom,#00000012_1px,transparent_1px)] bg-[size:75px_75px]"
         animate={{
           x: [0, 35, 0],
           y: [0, 35, 0],
@@ -57,7 +57,7 @@ const WhyChooseUs = () => (
 
       {/* 3D floating cube */}
       <motion.div
-        className="absolute top-[18%] right-[12%] w-24 h-24 rounded-3xl bg-white/70 border border-blue-100 shadow-[0_25px_80px_rgba(37,99,235,0.18)] backdrop-blur-xl"
+        className="absolute top-[18%] right-[12%] w-24 h-24 rounded-3xl bg-white/70 border border-gray-200 shadow-[0_25px_80px_rgba(0,0,0,0.15)] backdrop-blur-xl"
         animate={{
           rotateX: [0, 180, 360],
           rotateY: [0, 120, 360],
@@ -72,7 +72,7 @@ const WhyChooseUs = () => (
       />
 
       <motion.div
-        className="absolute bottom-[18%] left-[10%] w-20 h-20 rounded-2xl bg-cyan-100/70 border border-cyan-200 shadow-[0_25px_80px_rgba(6,182,212,0.18)] backdrop-blur-xl"
+        className="absolute bottom-[18%] left-[10%] w-20 h-20 rounded-2xl bg-gray-100/70 border border-gray-300 shadow-[0_25px_80px_rgba(0,0,0,0.15)] backdrop-blur-xl"
         animate={{
           rotateX: [360, 180, 0],
           rotateZ: [0, 180, 360],
@@ -88,7 +88,7 @@ const WhyChooseUs = () => (
 
       {/* Orbit circle */}
       <motion.div
-        className="absolute top-[28%] left-[8%] w-36 h-36 rounded-full border border-blue-200"
+        className="absolute top-[28%] left-[8%] w-36 h-36 rounded-full border border-gray-300"
         animate={{ rotate: 360 }}
         transition={{
           duration: 16,
@@ -96,12 +96,12 @@ const WhyChooseUs = () => (
           ease: "linear",
         }}
       >
-        <div className="absolute top-1 left-1/2 w-3 h-3 rounded-full bg-blue-500 shadow-[0_0_25px_rgba(37,99,235,0.8)]" />
+        <div className="absolute top-1 left-1/2 w-3 h-3 rounded-full bg-black shadow-[0_0_25px_rgba(0,0,0,0.5)]" />
       </motion.div>
 
       {/* Soft blur balls */}
       <motion.div
-        className="absolute top-24 left-1/3 w-80 h-80 bg-blue-200/50 rounded-full blur-[100px]"
+        className="absolute top-24 left-1/3 w-80 h-80 bg-gray-200/50 rounded-full blur-[100px]"
         animate={{
           x: [0, 100, 0],
           y: [0, 60, 0],
@@ -115,7 +115,7 @@ const WhyChooseUs = () => (
       />
 
       <motion.div
-        className="absolute bottom-10 right-1/3 w-80 h-80 bg-violet-200/50 rounded-full blur-[100px]"
+        className="absolute bottom-10 right-1/3 w-80 h-80 bg-gray-300/40 rounded-full blur-[100px]"
         animate={{
           x: [0, -100, 0],
           y: [0, -60, 0],
@@ -138,14 +138,14 @@ const WhyChooseUs = () => (
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="text-center mb-16"
       >
-        <span className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 text-sm font-bold tracking-widest uppercase px-5 py-2 rounded-full">
+        <span className="inline-flex items-center gap-2 bg-gray-100 border border-gray-200 text-gray-800 text-sm font-bold tracking-widest uppercase px-5 py-2 rounded-full">
           <CheckCircle2 size={16} />
           Why Choose Us
         </span>
 
-        <h2 className="text-gray-950 font-extrabold text-3xl md:text-5xl mt-5 leading-tight">
+        <h2 className="text-black font-extrabold text-3xl md:text-5xl mt-5 leading-tight">
           Built for{" "}
-          <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-violet-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-black via-gray-600 to-black bg-clip-text text-transparent">
             Your Success
           </span>
         </h2>
@@ -186,7 +186,7 @@ const WhyChooseUs = () => (
               rotateY: i % 2 === 0 ? -4 : 4,
             }}
             style={{ transformStyle: "preserve-3d" }}
-            className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-100 p-7 md:p-8 shadow-[0_20px_70px_rgba(15,23,42,0.08)] hover:shadow-[0_35px_90px_rgba(37,99,235,0.18)] transition-shadow duration-300"
+            className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-200 p-7 md:p-8 shadow-[0_20px_70px_rgba(0,0,0,0.08)] hover:shadow-[0_35px_90px_rgba(0,0,0,0.2)] transition-shadow duration-300"
           >
             {/* Hover gradient background */}
             <div
@@ -194,10 +194,10 @@ const WhyChooseUs = () => (
             />
 
             {/* Shine effect */}
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-blue-100/70 to-transparent" />
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-gray-200/70 to-transparent" />
 
             {/* Big number */}
-            <span className="absolute right-6 top-4 text-[80px] font-black text-gray-950/[0.04] leading-none">
+            <span className="absolute right-6 top-4 text-[80px] font-black text-black/[0.04] leading-none">
               0{i + 1}
             </span>
 
@@ -221,7 +221,7 @@ const WhyChooseUs = () => (
 
               {/* Text */}
               <div style={{ transform: "translateZ(30px)" }}>
-                <h3 className="text-gray-950 text-xl font-extrabold mb-3">
+                <h3 className="text-black text-xl font-extrabold mb-3">
                   {r.title}
                 </h3>
 
