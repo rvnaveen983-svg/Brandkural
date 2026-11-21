@@ -24,7 +24,7 @@ const serviceOptions = [
 ];
 
 const inputClass =
-  "w-full rounded-2xl bg-white/70 border border-white/70 px-4 py-3.5 text-sm text-gray-900 placeholder:text-gray-400 outline-none backdrop-blur-xl shadow-sm transition-all duration-300 focus:bg-white focus:border-blue-300 focus:ring-4 focus:ring-blue-500/15";
+  "w-full rounded-2xl bg-white/70 border border-gray-200 px-4 py-3.5 text-sm text-gray-900 placeholder:text-gray-400 outline-none backdrop-blur-xl shadow-sm transition-all duration-300 focus:bg-white focus:border-gray-500 focus:ring-4 focus:ring-black/10";
 
 const LeadForm = () => {
   const [step, setStep] = useState(1);
@@ -71,21 +71,21 @@ const LeadForm = () => {
 
   if (submitted) {
     return (
-      <section id="contact" className="relative py-24 bg-slate-950 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.35),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.25),transparent_35%)]" />
+      <section id="contact" className="relative py-24 bg-black overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_35%)]" />
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.85, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-lg mx-auto rounded-[36px] bg-white/90 border border-white/70 backdrop-blur-2xl shadow-[0_35px_120px_rgba(59,130,246,0.25)] p-10 md:p-12 text-center"
+            className="max-w-lg mx-auto rounded-[36px] bg-white/90 border border-white/70 backdrop-blur-2xl shadow-[0_35px_120px_rgba(255,255,255,0.15)] p-10 md:p-12 text-center"
           >
-            <div className="w-20 h-20 mx-auto rounded-full bg-blue-50 flex items-center justify-center mb-5">
-              <CheckCircle className="text-blue-600" size={52} />
+            <div className="w-20 h-20 mx-auto rounded-full bg-gray-100 flex items-center justify-center mb-5">
+              <CheckCircle className="text-black" size={52} />
             </div>
 
-            <h3 className="text-3xl font-extrabold mb-3 text-gray-950">
+            <h3 className="text-3xl font-extrabold mb-3 text-black">
               Thank You!
             </h3>
 
@@ -101,12 +101,12 @@ const LeadForm = () => {
   return (
     <section
       id="contact"
-      className="relative py-24 bg-slate-950 overflow-hidden"
+      className="relative py-24 bg-black overflow-hidden"
       style={{ perspective: "1400px" }}
     >
       {/* Premium 3D Animated Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.35),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(6,182,212,0.28),transparent_35%),linear-gradient(135deg,#020617,#0f172a_45%,#020617)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_35%),linear-gradient(135deg,#000000,#0a0a0a_45%,#000000)]" />
 
         <motion.div
           className="absolute inset-0 opacity-[0.22] bg-[linear-gradient(to_right,#ffffff18_1px,transparent_1px),linear-gradient(to_bottom,#ffffff18_1px,transparent_1px)] bg-[size:80px_80px]"
@@ -122,7 +122,7 @@ const LeadForm = () => {
         />
 
         <motion.div
-          className="absolute -top-28 left-1/4 w-[420px] h-[420px] rounded-full bg-blue-500/30 blur-[120px]"
+          className="absolute -top-28 left-1/4 w-[420px] h-[420px] rounded-full bg-white/10 blur-[120px]"
           animate={{
             x: [0, 80, 0],
             y: [0, 60, 0],
@@ -136,7 +136,7 @@ const LeadForm = () => {
         />
 
         <motion.div
-          className="absolute bottom-0 right-1/4 w-[420px] h-[420px] rounded-full bg-cyan-400/25 blur-[120px]"
+          className="absolute bottom-0 right-1/4 w-[420px] h-[420px] rounded-full bg-white/10 blur-[120px]"
           animate={{
             x: [0, -80, 0],
             y: [0, -50, 0],
@@ -151,7 +151,7 @@ const LeadForm = () => {
 
         {/* 3D Glass Cube */}
         <motion.div
-          className="absolute top-[16%] right-[10%] w-28 h-28 rounded-[30px] bg-white/10 border border-white/20 backdrop-blur-xl shadow-[0_30px_90px_rgba(59,130,246,0.28)]"
+          className="absolute top-[16%] right-[10%] w-28 h-28 rounded-[30px] bg-white/10 border border-white/20 backdrop-blur-xl shadow-[0_30px_90px_rgba(255,255,255,0.15)]"
           animate={{
             rotateX: [0, 180, 360],
             rotateY: [0, 140, 360],
@@ -167,7 +167,7 @@ const LeadForm = () => {
 
         {/* 3D Floating Ring */}
         <motion.div
-          className="absolute bottom-[18%] left-[9%] w-24 h-24 rounded-full border-[16px] border-cyan-300/25 shadow-[0_30px_90px_rgba(6,182,212,0.22)]"
+          className="absolute bottom-[18%] left-[9%] w-24 h-24 rounded-full border-[16px] border-white/10 shadow-[0_30px_90px_rgba(255,255,255,0.1)]"
           animate={{
             rotateX: [0, 360],
             rotateY: [360, 0],
@@ -197,7 +197,7 @@ const LeadForm = () => {
           }}
         >
           <div className="flex items-center gap-3 text-white">
-            <div className="w-10 h-10 rounded-2xl bg-cyan-500/30 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-2xl bg-white/20 flex items-center justify-center">
               <Mail size={18} />
             </div>
             <div>
@@ -218,14 +218,14 @@ const LeadForm = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center lg:text-left"
           >
-            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/15 backdrop-blur-xl text-cyan-200 text-sm font-bold tracking-widest uppercase px-5 py-2 rounded-full">
+            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/15 backdrop-blur-xl text-gray-200 text-sm font-bold tracking-widest uppercase px-5 py-2 rounded-full">
               <Sparkles size={16} />
               Get Started
             </span>
 
             <h2 className="text-4xl md:text-6xl font-extrabold mt-6 text-white leading-tight">
               Start Growing Your{" "}
-              <span className="bg-gradient-to-r from-blue-300 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white via-gray-300 to-gray-400 bg-clip-text text-transparent">
                 Business Today
               </span>
             </h2>
@@ -245,7 +245,7 @@ const LeadForm = () => {
                   key={item}
                   className="rounded-2xl bg-white/10 border border-white/15 backdrop-blur-xl p-4 text-white shadow-lg"
                 >
-                  <CheckCircle size={20} className="text-cyan-300 mb-2" />
+                  <CheckCircle size={20} className="text-white mb-2" />
                   <p className="text-sm font-bold">{item}</p>
                 </div>
               ))}
@@ -273,25 +273,25 @@ const LeadForm = () => {
                 stiffness: 160,
                 damping: 18,
               }}
-              className="relative overflow-hidden rounded-[36px] bg-white/75 border border-white/70 backdrop-blur-2xl shadow-[0_35px_120px_rgba(59,130,246,0.28)] p-7 md:p-9"
+              className="relative overflow-hidden rounded-[36px] bg-white/90 border border-white/70 backdrop-blur-2xl shadow-[0_35px_120px_rgba(255,255,255,0.15)] p-7 md:p-9"
             >
               {/* Glass shine */}
               <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
-              <div className="absolute -top-32 -right-32 w-72 h-72 rounded-full bg-blue-200/60 blur-3xl" />
-              <div className="absolute -bottom-32 -left-32 w-72 h-72 rounded-full bg-cyan-200/50 blur-3xl" />
+              <div className="absolute -top-32 -right-32 w-72 h-72 rounded-full bg-gray-200/60 blur-3xl" />
+              <div className="absolute -bottom-32 -left-32 w-72 h-72 rounded-full bg-gray-300/50 blur-3xl" />
 
               <div className="relative">
                 <div className="flex items-center justify-between gap-4 mb-7">
                   <div>
-                    <p className="text-sm font-bold text-blue-600 uppercase tracking-widest">
+                    <p className="text-sm font-bold text-gray-700 uppercase tracking-widest">
                       Contact Form
                     </p>
-                    <h3 className="text-2xl md:text-3xl font-extrabold text-gray-950 mt-1">
+                    <h3 className="text-2xl md:text-3xl font-extrabold text-black mt-1">
                       Get Free Quote
                     </h3>
                   </div>
 
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/25">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-black to-gray-700 flex items-center justify-center text-white shadow-lg shadow-black/25">
                     <Send size={22} />
                   </div>
                 </div>
@@ -303,7 +303,7 @@ const LeadForm = () => {
                       <div
                         className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-extrabold transition-all duration-300 ${
                           step >= s
-                            ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-300"
+                            ? "bg-gradient-to-r from-black to-gray-700 text-white shadow-lg shadow-black/30"
                             : "bg-white/70 text-gray-400 border border-gray-200"
                         }`}
                       >
@@ -314,7 +314,7 @@ const LeadForm = () => {
                         <div
                           className={`h-1 flex-1 rounded-full mx-3 transition-all duration-300 ${
                             step > 1
-                              ? "bg-gradient-to-r from-blue-600 to-cyan-500"
+                              ? "bg-gradient-to-r from-black to-gray-700"
                               : "bg-gray-200"
                           }`}
                         />
@@ -335,7 +335,7 @@ const LeadForm = () => {
                     >
                       <div>
                         <label className="text-sm font-bold mb-2 flex items-center gap-2 text-gray-700">
-                          <User size={16} className="text-blue-600" />
+                          <User size={16} className="text-black" />
                           Your Name
                         </label>
 
@@ -351,7 +351,7 @@ const LeadForm = () => {
 
                       <div>
                         <label className="text-sm font-bold mb-2 flex items-center gap-2 text-gray-700">
-                          <Building2 size={16} className="text-blue-600" />
+                          <Building2 size={16} className="text-black" />
                           Business Name
                         </label>
 
@@ -369,7 +369,7 @@ const LeadForm = () => {
                         type="button"
                         onClick={goNext}
                         disabled={!form.name.trim() || !form.business.trim()}
-                        className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 disabled:opacity-50 disabled:cursor-not-allowed text-white py-3.5 rounded-2xl font-extrabold shadow-lg shadow-blue-500/25 hover:shadow-xl hover:scale-[1.01] active:scale-[0.98] transition-all duration-200"
+                        className="w-full flex items-center justify-center gap-2 bg-black hover:bg-neutral-800 disabled:opacity-50 disabled:cursor-not-allowed text-white py-3.5 rounded-2xl font-extrabold shadow-lg shadow-black/25 hover:shadow-xl hover:scale-[1.01] active:scale-[0.98] transition-all duration-200"
                       >
                         Next
                         <ArrowRight size={18} />
@@ -388,7 +388,7 @@ const LeadForm = () => {
                     >
                       <div>
                         <label className="text-sm font-bold mb-2 flex items-center gap-2 text-gray-700">
-                          <Phone size={16} className="text-blue-600" />
+                          <Phone size={16} className="text-black" />
                           Phone Number
                         </label>
 
@@ -433,7 +433,7 @@ const LeadForm = () => {
 
                         <button
                           type="submit"
-                          className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white py-3.5 rounded-2xl font-extrabold shadow-lg shadow-blue-500/25 hover:shadow-xl hover:scale-[1.01] active:scale-[0.98] transition-all duration-200"
+                          className="flex-1 flex items-center justify-center gap-2 bg-black hover:bg-neutral-800 text-white py-3.5 rounded-2xl font-extrabold shadow-lg shadow-black/25 hover:shadow-xl hover:scale-[1.01] active:scale-[0.98] transition-all duration-200"
                         >
                           <Send size={16} />
                           Submit
