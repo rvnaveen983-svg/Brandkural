@@ -1,16 +1,10 @@
 "use client";
 
-import { TrendingUp, Users, Target, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-const stats = [
-  { icon: TrendingUp, value: "250+", label: "Projects Delivered" },
-  { icon: Users, value: "120+", label: "Happy Clients" },
-  { icon: Target, value: "98%", label: "Client Retention" },
-];
-
 const fadeUp = {
-  hidden: { opacity: 0, y: 45 },
+  hidden: { opacity: 0, y: 40 },
   show: (delay = 0) => ({
     opacity: 1,
     y: 0,
@@ -18,116 +12,123 @@ const fadeUp = {
   }),
 };
 
+const sideStats = [
+  { value: "120+", label: "Happy Clients" },
+  { value: "98%", label: "Client Retention" },
+];
+
 const AboutSection = () => (
   <section
     id="about"
-    className="relative py-24 bg-white overflow-hidden"
-    style={{ perspective: "1200px" }}
+    className="bg-paper px-6 py-24 font-body md:px-[5vw] md:py-36"
   >
-    {/* White Premium Background */}
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,0,0,0.06),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(0,0,0,0.05),transparent_35%)]" />
+    <div className="mx-auto max-w-[1669px]">
+      {/* Eyebrow */}
+      <div className="flex items-center gap-4 text-[11.5px] font-semibold tracking-[0.16em]">
+        <span className="text-brand-deep">01</span>
+        <span className="uppercase text-[#656c78]">About BrandKural</span>
+      </div>
 
-    {/* Animated Blobs */}
-    <motion.div
-      className="absolute -top-28 -left-28 w-80 h-80 rounded-full bg-gray-300/30 blur-3xl"
-      animate={{ x: [0, 50, 0], y: [0, 40, 0], scale: [1, 1.15, 1] }}
-      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-    />
+      {/* Heading + copy */}
+      <div className="mt-12 grid gap-10 lg:grid-cols-[1.66fr_1fr] lg:gap-[8vw]">
+        <motion.h2
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          className="font-heading text-[clamp(2.6rem,5.9vw,6.8rem)] font-medium leading-[0.95] tracking-[-0.055em] text-ink"
+        >
+          A results-driven
+          <br />
+          <span className="text-brand">digital marketing agency.</span>
+        </motion.h2>
 
-    <motion.div
-      className="absolute -bottom-32 -right-28 w-96 h-96 rounded-full bg-gray-200/40 blur-3xl"
-      animate={{ x: [0, -50, 0], y: [0, -40, 0], scale: [1, 1.2, 1] }}
-      transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-    />
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          custom={0.15}
+          className="pt-1 lg:pt-4"
+        >
+          <p className="text-[clamp(1.2rem,1.5vw,1.4rem)] leading-[1.45] tracking-[-0.02em] text-ink">
+            We help businesses generate high-quality leads, increase brand
+            visibility, and boost revenue through data-driven strategies.
+          </p>
 
-    {/* Soft Grid */}
-    <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000d_1px,transparent_1px),linear-gradient(to_bottom,#0000000d_1px,transparent_1px)] bg-[size:60px_60px]" />
+          <p className="py-6 text-base leading-7 text-[#646b76]">
+            Our team combines creativity with analytics to deliver measurable
+            growth.
+          </p>
 
-    <div className="container mx-auto px-4 relative z-10">
-      {/* Heading */}
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-[10px] border-b border-ink pb-2 text-[13.6px] font-semibold text-ink no-underline"
+          >
+            Get free consultation
+            <ArrowRight size={18} />
+          </a>
+        </motion.div>
+      </div>
+
+      {/* Showcase panel */}
       <motion.div
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
-        custom={0}
-        className="max-w-3xl mx-auto text-center mb-16"
+        viewport={{ once: true, margin: "-80px" }}
+        className="mt-20 grid min-h-[520px] overflow-hidden bg-navy-2 md:mt-28 lg:h-[620px] lg:grid-cols-[2.125fr_1fr]"
       >
-        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gray-100 border border-gray-200 text-gray-800 text-sm font-semibold mb-5 shadow-sm">
-          <Sparkles size={16} />
-          About Us
+        {/* Left: abstract blue light + stats */}
+        <div
+          className="relative min-h-[300px] overflow-hidden"
+          style={{
+            background:
+              "radial-gradient(circle at 20% 30%, rgba(37,99,235,0.55), transparent 45%), radial-gradient(circle at 70% 85%, rgba(20,91,219,0.35), transparent 50%), linear-gradient(135deg, #06162d, #0a2348)",
+          }}
+        >
+          <div className="absolute left-[11%] top-0 h-full w-[7%] bg-[rgba(30,90,255,0.35)]" />
+          <div className="absolute left-[46%] top-0 h-full w-px bg-[#2f6bff]" />
+          <div className="absolute left-[50%] top-0 h-full w-[9%] bg-[rgba(25,70,220,0.45)]" />
+
+          <div className="absolute bottom-8 left-8 flex gap-12 md:bottom-10 md:left-12 md:gap-16">
+            {sideStats.map((s) => (
+              <div key={s.label}>
+                <p className="font-heading text-[clamp(2.4rem,4vw,4rem)] font-medium leading-none tracking-[-0.06em] text-white">
+                  {s.value}
+                </p>
+                <p className="mt-3 text-[10px] uppercase tracking-[0.17em] text-white/65">
+                  {s.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <h2 className="text-black text-3xl md:text-5xl font-extrabold mt-3 mb-6 leading-tight">
-          A Results-Driven{" "}
-          <span className="bg-gradient-to-r from-black via-gray-600 to-black bg-clip-text text-transparent">
-            Digital Marketing
-          </span>{" "}
-          Agency
-        </h2>
+        {/* Right: big number */}
+        <div
+          className="flex min-h-[320px] flex-col p-8 md:p-14"
+          style={{
+            backgroundImage:
+              "linear-gradient(152deg, rgb(12,44,91) 8.5%, rgb(7,26,53) 66.6%)",
+          }}
+        >
+          <p className="text-[10px] uppercase tracking-[0.17em] text-[#8ba5ca]">
+            Projects delivered
+          </p>
 
-        <p className="text-gray-600 text-lg leading-relaxed">
-          We help businesses generate high-quality leads, increase brand
-          visibility, and boost revenue through data-driven strategies. Our team
-          combines creativity with analytics to deliver measurable growth.
-        </p>
-      </motion.div>
-
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-        {stats.map((s, i) => (
-          <motion.div
-            key={s.label}
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-80px" }}
-            custom={i * 0.15}
-            whileHover={{
-              y: -14,
-              rotateX: 6,
-              rotateY: -6,
-              scale: 1.03,
-            }}
-            transition={{ type: "spring", stiffness: 180, damping: 14 }}
-            style={{ transformStyle: "preserve-3d" }}
-            className="group relative bg-white border border-gray-200 rounded-3xl p-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden"
-          >
-            {/* Hover Glow */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-black/5 via-transparent to-gray-400/10" />
-
-            {/* Top Shine */}
-            <div className="absolute -top-20 left-0 w-full h-32 bg-gradient-to-b from-gray-100/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-            {/* Icon */}
-            <motion.div
-              className="relative mx-auto flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-black to-gray-700 mb-5 shadow-lg shadow-black/20"
-              whileHover={{ rotate: 360, scale: 1.08 }}
-              transition={{ duration: 0.7 }}
-            >
-              <s.icon className="text-white" size={26} />
-            </motion.div>
-
-            {/* Value */}
-            <motion.p
-              className="relative text-4xl font-extrabold bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent"
-              initial={{ scale: 0.8 }}
-              whileInView={{ scale: 1 }}
-              transition={{ delay: 0.3 + i * 0.15, duration: 0.4 }}
-            >
-              {s.value}
-            </motion.p>
-
-            {/* Label */}
-            <p className="relative text-gray-500 text-sm mt-2 font-medium">
-              {s.label}
+          <div className="mt-auto">
+            <p className="font-heading text-[clamp(5rem,11vw,12rem)] font-medium leading-[0.9] tracking-[-0.08em] text-[#4389ff]">
+              250+
             </p>
-
-            {/* Bottom Line */}
-            <div className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full bg-gradient-to-r from-black to-gray-500 transition-all duration-500" />
-          </motion.div>
-        ))}
-      </div>
+            <p className="mt-4 text-[18px] leading-[1.5] text-[#cbd8eb]">
+              brands grown with
+              <br />
+              data-driven strategies.
+            </p>
+          </div>
+        </div>
+      </motion.div>
     </div>
   </section>
 );
