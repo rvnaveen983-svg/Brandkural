@@ -25,23 +25,23 @@ const AboutSection = () => (
     style={{ perspective: "1200px" }}
   >
     {/* White Premium Background */}
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.14),transparent_35%)]" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,0,0,0.06),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(0,0,0,0.05),transparent_35%)]" />
 
     {/* Animated Blobs */}
     <motion.div
-      className="absolute -top-28 -left-28 w-80 h-80 rounded-full bg-blue-400/20 blur-3xl"
+      className="absolute -top-28 -left-28 w-80 h-80 rounded-full bg-gray-300/30 blur-3xl"
       animate={{ x: [0, 50, 0], y: [0, 40, 0], scale: [1, 1.15, 1] }}
       transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
     />
 
     <motion.div
-      className="absolute -bottom-32 -right-28 w-96 h-96 rounded-full bg-cyan-400/20 blur-3xl"
+      className="absolute -bottom-32 -right-28 w-96 h-96 rounded-full bg-gray-200/40 blur-3xl"
       animate={{ x: [0, -50, 0], y: [0, -40, 0], scale: [1, 1.2, 1] }}
       transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
     />
 
     {/* Soft Grid */}
-    <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e40af0d_1px,transparent_1px),linear-gradient(to_bottom,#1e40af0d_1px,transparent_1px)] bg-[size:60px_60px]" />
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000d_1px,transparent_1px),linear-gradient(to_bottom,#0000000d_1px,transparent_1px)] bg-[size:60px_60px]" />
 
     <div className="container mx-auto px-4 relative z-10">
       {/* Heading */}
@@ -53,14 +53,14 @@ const AboutSection = () => (
         custom={0}
         className="max-w-3xl mx-auto text-center mb-16"
       >
-        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-semibold mb-5 shadow-sm">
+        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gray-100 border border-gray-200 text-gray-800 text-sm font-semibold mb-5 shadow-sm">
           <Sparkles size={16} />
           About Us
         </div>
 
-        <h2 className="text-gray-950 text-3xl md:text-5xl font-extrabold mt-3 mb-6 leading-tight">
+        <h2 className="text-black text-3xl md:text-5xl font-extrabold mt-3 mb-6 leading-tight">
           A Results-Driven{" "}
-          <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-black via-gray-600 to-black bg-clip-text text-transparent">
             Digital Marketing
           </span>{" "}
           Agency
@@ -91,17 +91,17 @@ const AboutSection = () => (
             }}
             transition={{ type: "spring", stiffness: 180, damping: 14 }}
             style={{ transformStyle: "preserve-3d" }}
-            className="group relative bg-white border border-gray-100 rounded-3xl p-8 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)] overflow-hidden"
+            className="group relative bg-white border border-gray-200 rounded-3xl p-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden"
           >
             {/* Hover Glow */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-blue-600/10 via-transparent to-cyan-400/10" />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-black/5 via-transparent to-gray-400/10" />
 
             {/* Top Shine */}
-            <div className="absolute -top-20 left-0 w-full h-32 bg-gradient-to-b from-blue-100/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute -top-20 left-0 w-full h-32 bg-gradient-to-b from-gray-100/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Icon */}
             <motion.div
-              className="relative mx-auto flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 mb-5 shadow-lg shadow-blue-500/25"
+              className="relative mx-auto flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-black to-gray-700 mb-5 shadow-lg shadow-black/20"
               whileHover={{ rotate: 360, scale: 1.08 }}
               transition={{ duration: 0.7 }}
             >
@@ -110,7 +110,7 @@ const AboutSection = () => (
 
             {/* Value */}
             <motion.p
-              className="relative text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent"
+              className="relative text-4xl font-extrabold bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent"
               initial={{ scale: 0.8 }}
               whileInView={{ scale: 1 }}
               transition={{ delay: 0.3 + i * 0.15, duration: 0.4 }}
@@ -124,7 +124,7 @@ const AboutSection = () => (
             </p>
 
             {/* Bottom Line */}
-            <div className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full bg-gradient-to-r from-blue-600 to-cyan-400 transition-all duration-500" />
+            <div className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full bg-gradient-to-r from-black to-gray-500 transition-all duration-500" />
           </motion.div>
         ))}
       </div>
